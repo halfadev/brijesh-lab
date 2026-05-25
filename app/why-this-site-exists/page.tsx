@@ -12,9 +12,12 @@ export default function WhyThisSiteExistsPage() {
     <div className="site-shell">
       <Header />
       <main className="about-main essay-main">
-        <h1 className="page-title essay-title">
+        <h1 className="article-title">
           I Have Been Writing for Years. I&apos;m Finally Putting It Somewhere.
         </h1>
+        <p className="article-dek">
+          A founding note on reality, attention, writing, and why this site exists.
+        </p>
         <p>
           I&apos;d like to start by saying that I know nothing, but I have an opinion on
           almost everything.
