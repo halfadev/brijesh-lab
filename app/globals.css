@@ -14,6 +14,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -87,6 +88,9 @@ li + li {
 .nav a {
   color: var(--muted);
   text-decoration: none;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav a:hover {
@@ -144,6 +148,7 @@ li + li {
 
 .portrait {
   margin: 0;
+  justify-self: end;
 }
 
 .portrait img {
@@ -303,11 +308,13 @@ li + li {
 @media (max-width: 640px) {
   body {
     font-size: 17px;
+    line-height: 1.68;
   }
 
   .site-shell {
-    width: min(100% - 28px, 720px);
+    width: min(100% - 24px, 720px);
     padding-top: 24px;
+    padding-bottom: 42px;
   }
 
   .site-header,
@@ -319,22 +326,87 @@ li + li {
   .nav,
   .footer-links {
     justify-content: flex-start;
+    gap: 6px 16px;
   }
 
   .hero {
-    padding-top: 42px;
+    padding: 34px 0 26px;
+  }
+
+  .hero h1 {
+    margin-bottom: 14px;
+    font-size: clamp(1.75rem, 10vw, 2.35rem);
+    line-height: 1.12;
+  }
+
+  .hero-subheading,
+  .intro-copy p {
+    font-size: 1rem;
   }
 
   .intro-panel {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
+    padding: 28px 0;
   }
 
   .portrait {
-    max-width: 280px;
+    justify-self: start;
+    max-width: 220px;
+  }
+
+  .section {
+    padding: 28px 0;
+  }
+
+  .section h2 {
+    font-size: 1.16rem;
+  }
+
+  .privacy-receipt {
+    padding: 14px;
   }
 
   .receipt-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .article-main {
+    padding: 34px 0 18px;
+  }
+
+  .article-title {
+    font-size: clamp(1.8rem, 9vw, 2.35rem);
+    line-height: 1.15;
+  }
+
+  .article-dek {
+    margin-bottom: 28px;
+    font-size: 1rem;
+  }
+
+  .article p {
+    font-size: 1rem;
+    line-height: 1.72;
+    margin-bottom: 1.05rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header {
+    gap: 10px;
+  }
+
+  .brand {
+    font-size: 0.96rem;
+  }
+
+  .nav {
+    font-size: 0.92rem;
+  }
+
+  .hero h1 {
+    font-size: 1.65rem;
   }
 }
