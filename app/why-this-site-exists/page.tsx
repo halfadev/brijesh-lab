@@ -12,7 +12,7 @@ export default function WhyThisSiteExistsPage() {
     <div className="site-shell">
       <Header />
       <main className="about-main essay-main">
-        <h1 className="page-title">
+        <h1 className="page-title essay-title">
           I Have Been Writing for Years. I&apos;m Finally Putting It Somewhere.
         </h1>
         <p>

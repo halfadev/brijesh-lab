@@ -265,6 +265,12 @@ li + li {
   font-size: 1.08rem;
 }
 
+.essay-title {
+  max-width: 680px;
+  font-size: clamp(1.85rem, 4.5vw, 3rem);
+  letter-spacing: -0.02em;
+}
+
 .quiet-close {
   margin-top: 18px;
   color: var(--muted);
