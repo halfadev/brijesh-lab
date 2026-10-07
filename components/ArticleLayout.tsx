@@ -1,4 +1,5 @@
 import { formatDate, type Entry } from "@/lib/content";
+import { HardLink } from "@/components/HardLink";
 
 type ArticleLayoutProps = {
   entry: Entry;
@@ -9,9 +10,9 @@ type ArticleLayoutProps = {
 export function ArticleLayout({ entry, breadcrumbLabel, breadcrumbHref }: ArticleLayoutProps) {
   return (
     <main className="article-main">
-      <a className="breadcrumb" href={breadcrumbHref}>
+      <HardLink className="breadcrumb" href={breadcrumbHref}>
         &lt;- {breadcrumbLabel}
-      </a>
+      </HardLink>
       <article className="article">
         <h1 className="article-title">{entry.title}</h1>
         <p className="article-dek">{entry.dek}</p>

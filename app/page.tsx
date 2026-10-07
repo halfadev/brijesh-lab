@@ -18,7 +18,7 @@ export default function Home() {
             through essays, diagrams and visual learning.
           </p>
           <PrimaryButton className="publication-primary-link" href="/learn/global-life-sciences/01-industry-map">
-            Explore the Pharma Guide <span aria-hidden="true">→</span>
+            Explore the Pharma Guide →
           </PrimaryButton>
 
           <ul className="publication-principles" aria-label="What you will find here">

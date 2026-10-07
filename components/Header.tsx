@@ -1,14 +1,16 @@
+import { HardLink } from "@/components/HardLink";
+
 export function Header() {
   return (
     <header className="site-header">
-      <a className="brand" href="/">
+      <HardLink className="brand" href="/">
         Brijesh Ramakrishnan
-      </a>
+      </HardLink>
       <nav className="nav site-nav" aria-label="Primary navigation">
-        <a href="/writing">Writing</a>
-        <a href="/videos">Videos</a>
-        <a href="/learn">Learn</a>
-        <a href="/lab">Lab</a>
+        <HardLink href="/writing">Writing</HardLink>
+        <HardLink href="/videos">Videos</HardLink>
+        <HardLink href="/learn">Learn</HardLink>
+        <HardLink href="/lab">Lab</HardLink>
       </nav>
     </header>
   );

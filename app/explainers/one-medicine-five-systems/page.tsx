@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ArticleBody, ArticleHeader, Callout, KeyConcept, Sources } from "@/components/ui/ArticlePrimitives";
 import { PageContainer } from "@/components/ui/LayoutPrimitives";
+import { HardLink } from "@/components/HardLink";
 import { pageMetadata } from "@/lib/metadata";
 
 const systems = [
@@ -42,9 +43,9 @@ export default function OneMedicineFiveSystemsPage() {
   return (
     <main className="publication-entry medicine-explainer">
       <PageContainer width="wide">
-        <a className="explainer-back" href="/explainers">
+        <HardLink className="explainer-back" href="/explainers">
           ← All explainers
-        </a>
+        </HardLink>
 
         <ArticleHeader
           eyebrow="Explainer · Enterprise systems"

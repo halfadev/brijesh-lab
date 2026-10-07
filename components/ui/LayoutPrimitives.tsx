@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { HardLink } from "@/components/HardLink";
 
 function classes(...values: Array<string | undefined>) {
   return values.filter(Boolean).join(" ");
@@ -27,11 +28,11 @@ export function MediaCard({ children, className }: { children: ReactNode; classN
 }
 
 export function PrimaryButton({ children, href, className }: { children: ReactNode; href: string; className?: string }) {
-  return <a className={classes("ui-button", "ui-button-primary", className)} href={href}>{children}</a>;
+  return <HardLink className={classes("ui-button", "ui-button-primary", className)} href={href}>{children}</HardLink>;
 }
 
 export function SecondaryButton({ children, href, className }: { children: ReactNode; href: string; className?: string }) {
-  return <a className={classes("ui-button", "ui-button-secondary", className)} href={href}>{children}</a>;
+  return <HardLink className={classes("ui-button", "ui-button-secondary", className)} href={href}>{children}</HardLink>;
 }
 
 export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {

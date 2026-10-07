@@ -1,4 +1,5 @@
 import type { EntrySummary } from "@/lib/content";
+import { HardLink } from "@/components/HardLink";
 
 export function CourseSyllabus({ modules }: { modules: EntrySummary[] }) {
   return (
@@ -8,7 +9,7 @@ export function CourseSyllabus({ modules }: { modules: EntrySummary[] }) {
           <span className="course-number">Module {module.module}</span>
           <div>
             <h2>
-              <a href={module.route}>{module.title}</a>
+              <HardLink href={module.route}>{module.title}</HardLink>
             </h2>
             <p>{module.objective ?? module.dek}</p>
             <p className="course-meta">

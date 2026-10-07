@@ -1,4 +1,5 @@
 import { formatDate, type EntrySummary } from "@/lib/content";
+import { HardLink } from "@/components/HardLink";
 
 type EntryListProps = {
   entries: EntrySummary[];
@@ -15,9 +16,9 @@ export function EntryList({ entries, showTrack = false }: EntryListProps) {
     <ul className="entry-list">
       {entries.map((entry) => (
         <li key={entry.route} className="entry-item">
-          <a className="entry-title" href={entry.route}>
+          <HardLink className="entry-title" href={entry.route}>
             {entry.title}
-          </a>
+          </HardLink>
           <p className="entry-dek">{entry.dek}</p>
           <p className="entry-meta">
             {showTrack && (

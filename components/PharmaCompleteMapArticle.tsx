@@ -1,4 +1,5 @@
 import { ArticleBody, ArticleHeader, InfographicBlock, KeyConcept, NextModule } from "@/components/ui/ArticlePrimitives";
+import { HardLink } from "@/components/HardLink";
 
 const assetRoot = "/images/library/pharma-complete-map";
 
@@ -147,7 +148,7 @@ export function PharmaCompleteMapArticle() {
         <NextModule title="Discovering and Developing a Medicine" status="Coming soon" />
       </ArticleBody>
 
-      <nav className="flagship-back"><a href="/">← Back to homepage</a></nav>
+      <nav className="flagship-back"><HardLink href="/">← Back to homepage</HardLink></nav>
     </main>
   );
 }

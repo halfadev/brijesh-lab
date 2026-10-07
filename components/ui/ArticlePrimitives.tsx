@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { Eyebrow } from "@/components/ui/LayoutPrimitives";
+import { HardLink } from "@/components/HardLink";
 
 export function ArticleHeader({ eyebrow, title, dek, meta, className }: { eyebrow: string; title: string; dek?: string; meta?: string; className?: string }) {
   return <header className={["ui-article-header", className].filter(Boolean).join(" ")}><Eyebrow>{eyebrow}</Eyebrow><h1>{title}</h1>{dek ? <p className="ui-article-dek">{dek}</p> : null}{meta ? <p className="ui-article-meta">{meta}</p> : null}</header>;
@@ -49,7 +50,7 @@ export function SourceReferences({ children }: { children: ReactNode }) {
 export const Sources = SourceReferences;
 
 export function PreviousNext({ previous, next }: { previous?: { href: string; title: string }; next?: { href: string; title: string } }) {
-  return <nav className="ui-previous-next" aria-label="Previous and next content"><div>{previous ? <><span>Previous</span><a href={previous.href}>← {previous.title}</a></> : null}</div><div>{next ? <><span>Next</span><a href={next.href}>{next.title} →</a></> : null}</div></nav>;
+  return <nav className="ui-previous-next" aria-label="Previous and next content"><div>{previous ? <><span>Previous</span><HardLink href={previous.href}>← {previous.title}</HardLink></> : null}</div><div>{next ? <><span>Next</span><HardLink href={next.href}>{next.title} →</HardLink></> : null}</div></nav>;
 }
 
 export function NextModule({ eyebrow = "Next module", title, status }: { eyebrow?: string; title: string; status: string }) {
