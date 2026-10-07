@@ -1,11 +1,8 @@
-import { nowItems } from "@/data/site";
+import { getNow } from "@/lib/content";
 
 export function CurrentFocus() {
-  return (
-    <ul>
-      {nowItems.map((item) => (
-        <li key={item}>{item}</li>
-      ))}
-    </ul>
-  );
+  const { html } = getNow();
+
+  // eslint-disable-next-line react/no-danger -- content is our own markdown, rendered at build time
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
 }

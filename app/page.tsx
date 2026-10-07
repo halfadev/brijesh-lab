@@ -1,82 +1,84 @@
-import { CurrentFocus } from "@/components/CurrentFocus";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { PrivacyReceipt } from "@/components/PrivacyReceipt";
-import { Section } from "@/components/Section";
+import Image from "next/image";
+import { LessonVideo } from "@/components/LessonVideo";
+import { Eyebrow, HeroLayout, PrimaryButton, TwoColumn } from "@/components/ui/LayoutPrimitives";
+import { EntryList } from "@/components/EntryList";
+import { getFeaturedEntries } from "@/lib/content";
 
 export default function Home() {
+  const featured = getFeaturedEntries();
   return (
-    <div className="site-shell">
-      <Header />
-      <main>
-        <section className="hero" aria-labelledby="tagline-title">
-          <h1 id="tagline-title">
-            Part professional archive.
-            <br />
-            Part thinking lab.
+    <main className="publication-home">
+      <HeroLayout className="publication-hero" labelledBy="home-title">
+        <div className="publication-hero-copy">
+          <h1 id="home-title">
+            Making sense of <span>complex systems.</span>
           </h1>
-          <p className="hero-subheading">
-            A place where I write about ideas still finding their shape.
-          </p>
-        </section>
-
-        <section className="intro-panel" aria-label="Introduction">
-          <div className="intro-copy">
-            <p className="identity-line">Systems. Stories. Sport. Curiosity.</p>
-            <p>
-              I work on enterprise software for life sciences supply chains, and write
-              about the systems - technical, human, and personal - that I&apos;m trying
-              to understand.
-            </p>
-            <p>
-              <a className="standalone-link" href="/why-this-site-exists">
-                Why this site exists -&gt;
-              </a>
-            </p>
-          </div>
-          <figure className="portrait">
-            <img
-              src="/self.jpg"
-              alt="Brijesh Ramakrishnan smiling on a city street at night"
-            />
-          </figure>
-        </section>
-
-        <Section title="A small origin story">
           <p>
-            I&apos;ve been lucky to follow curiosity through a few different versions of
-            myself.
+            I break down complex systems across life sciences, technology and AI
+            through essays, diagrams and visual learning.
           </p>
-          <p>
-            I grew up curious about computers, starting with the family desktop my dad
-            brought home when I was eight - an Intel Pentium 1 with 32 MB RAM, which
-            felt like a rocketship. That curiosity evolved into writing code, then
-            building software, and now selling and explaining it.
-          </p>
-          <p>
-            Over time, I&apos;ve realized I&apos;m less interested in technology by itself
-            and more interested in the hidden machinery behind things: how products are
-            built, how companies make decisions, how industries move, how athletes
-            improve, and how people become slightly better versions of themselves.
-          </p>
-          <p>
-            Right now, that curiosity is pointed at supply chains and the global life
-            sciences industry. I&apos;m trying to understand the nuts and bolts well
-            enough to explain them clearly, design around them thoughtfully, and write
-            about what I learn.
-          </p>
-        </Section>
+          <PrimaryButton className="publication-primary-link" href="/learn/global-life-sciences/01-industry-map">
+            Explore the Pharma Guide →
+          </PrimaryButton>
 
-        <Section title="What am I doing now?" id="now">
-          <p className="section-subtitle">Last updated May 2026</p>
-          <CurrentFocus />
-        </Section>
+          <ul className="publication-principles" aria-label="What you will find here">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v16H5.5A2.5 2.5 0 0 0 3 21.5v-16ZM21 5.5A2.5 2.5 0 0 0 18.5 3H13v16h5.5a2.5 2.5 0 0 1 2.5 2.5v-16Z" /></svg>
+              Visual learning
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2.25"/><circle cx="5" cy="18.5" r="2.25"/><circle cx="19" cy="18.5" r="2.25"/><path d="M12 6.25v5.25M5 16.25v-2.5h14v2.5M12 11.5v3"/></svg>
+              System maps
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 16.5h7M9.5 20h5M8.4 14.7A7 7 0 1 1 15.6 14.7c-.8.6-1.1 1.1-1.1 1.8h-5c0-.7-.3-1.2-1.1-1.8Z"/></svg>
+              Clear explanations
+            </li>
+          </ul>
+        </div>
 
-        <Section title="A small privacy receipt">
-          <PrivacyReceipt />
-        </Section>
-      </main>
-      <Footer />
-    </div>
+        <figure className="lifecycle-hero-visual">
+          <Image
+            src="/images/library/pharmaceutical-lifecycle.svg"
+            alt="The pharmaceutical lifecycle from discovery through real-world learning"
+            width={1200}
+            height={330}
+            priority
+          />
+        </figure>
+      </HeroLayout>
+
+      <TwoColumn className="home-about" labelledBy="home-about-title">
+        <div className="home-about-copy">
+          <Eyebrow className="publication-eyebrow">About this project</Eyebrow>
+          <h2 id="home-about-title">Curious about how complicated things actually work.</h2>
+          <p>
+            I explore the systems behind life sciences, technology, AI, business
+            and the products we interact with.
+          </p>
+          <p>
+            I map the actors, flows, constraints and decisions underneath them,
+            then turn what I learn into essays, research and visual explanations.
+          </p>
+          <p>
+            Life sciences is where I&apos;m starting. Over time, this site will expand
+            into broader technology and product systems.
+          </p>
+        </div>
+        <div className="home-about-video">
+          <LessonVideo
+            className="about-welcome-video"
+            youtubeId="AlZYViIUws0"
+            title="Welcome to Brijesh Ramakrishnan's website"
+          />
+          <p>A short introduction to what I am building and why.</p>
+        </div>
+      </TwoColumn>
+      <section className="home-featured" aria-labelledby="featured-title">
+        <Eyebrow>Featured and latest</Eyebrow>
+        <h2 id="featured-title">Start exploring</h2>
+        <EntryList entries={featured} showTrack />
+      </section>
+    </main>
   );
 }

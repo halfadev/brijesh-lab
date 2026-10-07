@@ -1,15 +1,34 @@
 # dependencies
 node_modules
+.pnp
+.pnp.*
 
 # next.js
 .next
 out
+dist
+build
+
+# local caches and generated coverage
+.cache
+.turbo
+.wrangler
+.vinext
+.eslintcache
+coverage
+*.tsbuildinfo
+/lib/generated-content.json
 
 # vercel
 .vercel
 
+# local transfer archives (source folders remain versioned)
+/structure.tar.xz
+/visual-language-kit.zip
+
 # env files
 .env*
+!.env.example
 
 # logs
 npm-debug.log*
@@ -21,3 +40,10 @@ pnpm-debug.log*
 # os files
 .DS_Store
 Thumbs.db
+
+# editor files
+.idea
+.vscode
+*.swp
+*.swo
+*~

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-labelledby="title description">
+  <title id="title">The pharmaceutical lifecycle</title>
+  <desc id="description">Nine stages showing how medicines move from discovery and development through approval, manufacturing, patient use and real-world learning.</desc>
+  <style>
+    .title{font:700 34px Inter,Arial,sans-serif;fill:#0a2d5b}.subtitle{font:400 19px Inter,Arial,sans-serif;fill:#5b6d8e}.stage{font:700 16px Inter,Arial,sans-serif;fill:#0a2d5b;text-anchor:middle}.number{font:700 16px Inter,Arial,sans-serif;fill:#0a2d5b;text-anchor:middle}.group{font:700 14px Inter,Arial,sans-serif;fill:#47658b;letter-spacing:1.5px;text-anchor:middle}.rule{stroke:#7891b0;stroke-width:1.5}.chev{stroke:#fff;stroke-width:2}
+  </style>
+  <rect width="1200" height="330" rx="20" fill="#fbfdff"/>
+  <rect x="1" y="1" width="1198" height="328" rx="19" fill="none" stroke="#b5d7f2"/>
+  <text class="title" x="42" y="58">The pharmaceutical lifecycle</text>
+  <text class="subtitle" x="42" y="88">From scientific discovery to real-world impact.</text>
+
+  <g transform="translate(40 122)">
+    <path class="chev" fill="#dceeff" d="M0 0h108l24 64-24 64H0l23-64z"/>
+    <path class="chev" fill="#c8e4ff" d="M108 0h108l24 64-24 64H108l24-64z"/>
+    <path class="chev" fill="#d9dcff" d="M216 0h108l24 64-24 64H216l24-64z"/>
+    <path class="chev" fill="#ccebdc" d="M324 0h108l24 64-24 64H324l24-64z"/>
+    <path class="chev" fill="#ffefbd" d="M432 0h108l24 64-24 64H432l24-64z"/>
+    <path class="chev" fill="#ffe0cc" d="M540 0h108l24 64-24 64H540l24-64z"/>
+    <path class="chev" fill="#f5d7e0" d="M648 0h108l24 64-24 64H648l24-64z"/>
+    <path class="chev" fill="#e3dcff" d="M756 0h108l24 64-24 64H756l24-64z"/>
+    <path class="chev" fill="#d8edff" d="M864 0h110l28 64-28 64H864l24-64z"/>
+
+    <g transform="translate(66 35)"><circle cx="0" cy="0" r="17" fill="#fff" opacity=".62"/><text class="number" x="0" y="5">1</text><text class="stage" x="0" y="55">Discover</text></g>
+    <g transform="translate(174 35)"><circle cx="0" cy="0" r="17" fill="#fff" opacity=".62"/><text class="number" x="0" y="5">2</text><text class="stage" x="0" y="55">Develop</text></g>
+    <g transform="translate(282 35)"><circle cx="0" cy="0" r="17" fill="#fff" opacity=".62"/><text class="number" x="0" y="5">3</text><text class="stage" x="0" y="55">Prove</text></g>
+    <g transform="translate(390 35)"><circle cx="0" cy="0" r="17" fill="#fff" opacity=".62"/><text class="number" x="0" y="5">4</text><text class="stage" x="0" y="55">Approve</text></g>
+    <g transform="translate(498 35)"><circle cx="0" cy="0" r="17" fill="#fff" opacity=".62"/><text class="number" x="0" y="5">5</text><text class="stage" x="0" y="55">Make</text></g>
+    <g transform="translate(606 35)"><circle cx="0" cy="0" r="17" fill="#fff" opacity=".62"/><text class="number" x="0" y="5">6</text><text class="stage" x="0" y="55">Move</text></g>
+    <g transform="translate(714 35)"><circle cx="0" cy="0" r="17" fill="#fff" opacity=".62"/><text class="number" x="0" y="5">7</text><text class="stage" x="0" y="55">Access</text></g>
+    <g transform="translate(822 35)"><circle cx="0" cy="0" r="17" fill="#fff" opacity=".62"/><text class="number" x="0" y="5">8</text><text class="stage" x="0" y="55">Use</text></g>
+    <g transform="translate(930 35)"><circle cx="0" cy="0" r="17" fill="#fff" opacity=".62"/><text class="number" x="0" y="5">9</text><text class="stage" x="0" y="55">Learn</text></g>
+
+    <line class="rule" x1="10" y1="157" x2="422" y2="157"/><text class="group" x="216" y="180">INNOVATION</text>
+    <line class="rule" x1="446" y1="157" x2="638" y2="157"/><text class="group" x="542" y="180">DELIVERY</text>
+    <line class="rule" x1="662" y1="157" x2="992" y2="157"/><text class="group" x="827" y="180">REAL-WORLD IMPACT</text>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">Making sense of complex systems color palette</title>
+  <desc id="desc">Eight core brand colors and six optional supporting diagram colors.</desc>
+  <rect width="1200" height="660" fill="#F7FAFC"/>
+  <text x="60" y="72" fill="#0A2D5B" font-family="Inter,Arial,sans-serif" font-size="42" font-weight="800">Visual language palette</text>
+  <text x="60" y="110" fill="#465D79" font-family="Inter,Arial,sans-serif" font-size="20">Core hierarchy first. Supporting colors only when categories need distinction.</text>
+  <g font-family="Inter,Arial,sans-serif" font-size="17" fill="#304B69">
+    <g transform="translate(60 155)"><rect width="245" height="120" rx="12" fill="#0A2D5B"/><text x="0" y="150">Heading · #0A2D5B</text></g>
+    <g transform="translate(335 155)"><rect width="245" height="120" rx="12" fill="#304B69"/><text x="0" y="150">Body · #304B69</text></g>
+    <g transform="translate(610 155)"><rect width="245" height="120" rx="12" fill="#1779CF"/><text x="0" y="150">Primary · #1779CF</text></g>
+    <g transform="translate(885 155)"><rect width="245" height="120" rx="12" fill="#E4F3FF" stroke="#B5D7F2"/><text x="0" y="150">Section · #E4F3FF</text></g>
+    <g transform="translate(60 345)"><rect width="245" height="90" rx="12" fill="#FFFEFA" stroke="#B5D7F2"/><text x="0" y="120">Surface · #FFFEFA</text></g>
+    <g transform="translate(335 345)"><rect width="245" height="90" rx="12" fill="#B5D7F2"/><text x="0" y="120">Border · #B5D7F2</text></g>
+    <g transform="translate(610 345)"><rect width="245" height="90" rx="12" fill="#465D79"/><text x="0" y="120">Muted · #465D79</text></g>
+    <g transform="translate(885 345)"><rect width="245" height="90" rx="12" fill="#F7FAFC" stroke="#B5D7F2"/><text x="0" y="120">Page · #F7FAFC</text></g>
+  </g>
+  <text x="60" y="535" fill="#0A2D5B" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="700">Optional category accents</text>
+  <g transform="translate(60 565)">
+    <rect width="160" height="48" rx="8" fill="#E2C8F2"/><rect x="182" width="160" height="48" rx="8" fill="#CDEFD8"/>
+    <rect x="364" width="160" height="48" rx="8" fill="#FAEAA8"/><rect x="546" width="160" height="48" rx="8" fill="#FADCC8"/>
+    <rect x="728" width="160" height="48" rx="8" fill="#F2D5DF"/><rect x="910" width="160" height="48" rx="8" fill="#D9ECFF"/>
+  </g>
+</svg>
