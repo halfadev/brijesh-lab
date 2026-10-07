@@ -1,0 +1,43 @@
+# dependencies
+node_modules
+.pnp
+.pnp.*
+
+# next.js
+.next
+out
+dist
+build
+
+# local caches and generated coverage
+.cache
+.turbo
+.wrangler
+.eslintcache
+coverage
+*.tsbuildinfo
+
+# vercel
+.vercel
+
+# env files
+.env*
+!.env.example
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# os files
+.DS_Store
+Thumbs.db
+
+# editor files
+.idea
+.vscode
+*.swp
+*.swo
+*~
