@@ -1,7 +1,11 @@
 // Set NEXT_PUBLIC_SITE_URL in the deployment environment once the site has a
 // real domain. Everything that builds absolute URLs (metadata, sitemap,
 // RSS, OG images) reads from here.
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://brijesh-lab.vercel.app").replace(
+const vercelProductionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : undefined;
+
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? vercelProductionUrl ?? "http://localhost:3000").replace(
   /\/$/,
   "",
 );
