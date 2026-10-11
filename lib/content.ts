@@ -1,5 +1,5 @@
-import matter from "gray-matter";
 import { marked } from "marked";
+import { parse as parseYaml } from "yaml";
 import generatedContent from "./generated-content.json";
 
 export type ContentSection = "writing" | "videos" | "learn" | "lab";
@@ -17,6 +17,18 @@ export type Entry = EntrySummary & { source: string; html: string };
 
 type GeneratedContentFile = { path: string; raw: string };
 const contentFiles = generatedContent as GeneratedContentFile[];
+
+function parseFrontmatter(raw: string): { data: Record<string, unknown>; content: string } {
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
+  if (!match) return { data: {}, content: raw };
+
+  const parsed = parseYaml(match[1]);
+  const data = parsed && typeof parsed === "object" && !Array.isArray(parsed)
+    ? parsed as Record<string, unknown>
+    : {};
+
+  return { data, content: raw.slice(match[0].length) };
+}
 
 function normalizeDate(value: unknown): string {
   if (value instanceof Date) return value.toISOString().slice(0, 10);
@@ -70,7 +82,7 @@ function routeFor(section: ContentSection, slug: string, course?: string, type?:
   return `/${section}/${slug}`;
 }
 function readFile(section: ContentSection, filePath: string, raw: string): Entry {
-  const { data, content } = matter(raw);
+  const { data, content } = parseFrontmatter(raw);
   const pathParts = filePath.split("/");
   const fallbackSlug = pathParts.at(-1)?.replace(/\.(md|mdx)$/, "") ?? "";
   const courseFromPath = section === "learn"
@@ -145,6 +157,6 @@ export function formatMonthYear(isoDate: string): string {
 }
 export function getNow() {
   const raw = contentFiles.find((file) => file.path === "now.md")?.raw ?? "";
-  const { data, content } = matter(raw);
+  const { data, content } = parseFrontmatter(raw);
   return { updated: normalizeDate(data.updated), html: marked.parse(content, { async: false }) as string };
 }
