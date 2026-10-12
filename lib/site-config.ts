@@ -26,7 +26,7 @@ export const calendlyUrl = (
 ).trim();
 
 export const youtubeUrl = (
-  process.env.NEXT_PUBLIC_YOUTUBE_URL ?? "https://www.youtube.com/watch?v=AlZYViIUws0"
+  process.env.NEXT_PUBLIC_YOUTUBE_URL ?? "https://www.youtube.com/watch?v=jrFZoEQb5MA"
 ).trim();
 
 export const rssPath = "/feed.xml";

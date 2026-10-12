@@ -7,8 +7,9 @@ import { getFeaturedEntries } from "@/lib/content";
 import { calendlyUrl } from "@/lib/site-config";
 
 const welcomeVideo = {
-  youtubeId: "AlZYViIUws0",
-  title: "Welcome to Brijesh Ramakrishnan's website",
+  youtubeId: "jrFZoEQb5MA",
+  title: "Welcome to My Lab — Brijesh Ramakrishnan",
+  posterSrc: "/images/welcome-to-my-lab-thumbnail.png",
 };
 
 export default function Home() {
@@ -53,6 +54,7 @@ export default function Home() {
             className="about-welcome-video"
             youtubeId={welcomeVideo.youtubeId}
             title={welcomeVideo.title}
+            posterSrc={welcomeVideo.posterSrc}
           />
         </div>
       </HeroLayout>

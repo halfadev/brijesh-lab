@@ -1,22 +1,49 @@
+"use client";
+
+import Image from "next/image";
+import { useState } from "react";
+
 type Video = { title: string; format: string; targetLength: string; teachingSequence?: string };
 
 type LessonVideoProps =
-  | { video: Video; placeholderTitle?: never; placeholderText?: never; youtubeId?: never; title?: never; className?: string }
-  | { video?: never; placeholderTitle: string; placeholderText?: string; youtubeId?: never; title?: never; className?: string }
-  | { video?: never; placeholderTitle?: never; placeholderText?: never; youtubeId: string; title: string; className?: string };
+  | { video: Video; placeholderTitle?: never; placeholderText?: never; youtubeId?: never; title?: never; posterSrc?: never; className?: string }
+  | { video?: never; placeholderTitle: string; placeholderText?: string; youtubeId?: never; title?: never; posterSrc?: never; className?: string }
+  | { video?: never; placeholderTitle?: never; placeholderText?: never; youtubeId: string; title: string; posterSrc?: string; className?: string };
 
-export function LessonVideo({ video, placeholderTitle, placeholderText, youtubeId, title, className }: LessonVideoProps) {
+export function LessonVideo({ video, placeholderTitle, placeholderText, youtubeId, title, posterSrc, className }: LessonVideoProps) {
+  const [showPlayer, setShowPlayer] = useState(!posterSrc);
+
   if (youtubeId) {
     return (
       <section className={`lesson-video video-frame video-frame-embed ${className ?? ""}`.trim()} aria-label={title}>
-        <iframe
-          src={`https://www.youtube-nocookie.com/embed/${youtubeId}?rel=0`}
-          title={title}
-          loading="lazy"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
+        {posterSrc && !showPlayer ? (
+          <button
+            className="video-poster-button"
+            type="button"
+            aria-label={`Play ${title}`}
+            onClick={() => setShowPlayer(true)}
+          >
+            <Image
+              src={posterSrc}
+              alt=""
+              fill
+              priority
+              sizes="(max-width: 1120px) calc(100vw - 24px), 48vw"
+            />
+            <span className="video-poster-play" aria-hidden="true">
+              <span />
+            </span>
+          </button>
+        ) : (
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${youtubeId}?rel=0${posterSrc ? "&autoplay=1" : ""}`}
+            title={title}
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        )}
       </section>
     );
   }
