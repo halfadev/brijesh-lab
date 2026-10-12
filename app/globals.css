@@ -2682,7 +2682,7 @@ body:has(.publication-home) .site-header .nav a:focus-visible {
   padding: 48px 0 60px;
 }
 
-.publication-hero-copy h1 {
+.publication-hero-copy h2 {
   max-width: 600px;
   margin: 0 0 24px;
   color: #102a4f;
@@ -2692,7 +2692,7 @@ body:has(.publication-home) .site-header .nav a:focus-visible {
   line-height: 1.02;
 }
 
-.publication-hero-copy h1 span {
+.publication-hero-copy h2 span {
   display: block;
   color: var(--publication-blue);
 }
@@ -2786,6 +2786,33 @@ body:has(.publication-home) .site-header .nav a:focus-visible {
   padding: 72px 0 76px;
 }
 
+.home-intro-hero {
+  grid-template-areas:
+    "intro media"
+    "cta media"
+    "support media";
+  grid-template-rows: auto auto 1fr;
+  column-gap: clamp(56px, 7vw, 108px);
+  row-gap: 0;
+  padding: 56px 0 64px;
+}
+
+.home-intro-copy { grid-area: intro; }
+.home-intro-video {
+  grid-area: media;
+  align-self: center;
+  padding-top: 0;
+}
+.home-intro-cta {
+  grid-area: cta;
+  margin-top: 28px;
+}
+.home-intro-supporting {
+  grid-area: support;
+  max-width: 650px;
+  margin-top: 28px;
+}
+
 .home-about::before {
   content: "";
   position: absolute;
@@ -2794,7 +2821,7 @@ body:has(.publication-home) .site-header .nav a:focus-visible {
   background: #e4f3ff;
 }
 
-.home-about-copy h2 {
+.home-about-copy h1 {
   max-width: 690px;
   margin: 8px 0 28px;
   color: var(--publication-navy);
@@ -2814,6 +2841,35 @@ body:has(.publication-home) .site-header .nav a:focus-visible {
 
 .home-about-copy > p + p {
   margin-top: 16px;
+}
+
+.home-intro-supporting p {
+  max-width: 650px;
+  margin: 0;
+  color: var(--publication-muted);
+  font-size: 1.02rem;
+  line-height: 1.74;
+}
+
+.home-intro-supporting p + p {
+  margin-top: 16px;
+}
+
+.home-primary-cta-placeholder {
+  display: inline-flex;
+  min-height: 48px;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
+  color: #315b87;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px dashed #7aaed6;
+  border-radius: 7px;
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.035em;
+  line-height: 1.25;
+  text-align: center;
 }
 
 .home-about-video {
@@ -2987,8 +3043,19 @@ body:has(.publication-home) .site-header .nav a:focus-visible {
   .featured-course-copy { padding: 6px 8px 10px; }
   .follow-project { grid-template-columns: 1fr; gap: 24px; }
   .home-about { grid-template-columns: 1fr; gap: 42px; }
+  .home-intro-hero {
+    grid-template-areas:
+      "intro"
+      "media"
+      "cta"
+      "support";
+    row-gap: 0;
+  }
   .home-about-copy { max-width: 700px; }
   .home-about-video { width: min(100%, 700px); padding-top: 0; justify-self: start; }
+  .home-intro-video { margin-top: 34px; }
+  .home-intro-cta { margin-top: 24px; }
+  .home-intro-supporting { margin-top: 28px; }
 }
 
 /* About page in the same publication system as the homepage. */
@@ -3119,7 +3186,7 @@ body:has(.about-publication) .site-header .nav a {
   body:has(.publication-home) .site-header .nav { gap: 15px; font-size: 0.88rem; }
   body:has(.publication-home) .brand { max-width: 154px; font-size: 1.05rem; line-height: 1.12; }
   .publication-hero { gap: 38px; padding: 42px 0 40px; }
-  .publication-hero-copy h1 { font-size: clamp(2.65rem, 13vw, 3.65rem); }
+  .publication-hero-copy h2 { font-size: clamp(2.65rem, 13vw, 3.65rem); }
   .publication-hero-copy > p { font-size: 1.05rem; line-height: 1.72; }
   .publication-principles { display: grid; grid-template-columns: 1fr 1fr; margin-top: 34px; }
   .publication-principles li { padding: 0 10px 0 0; border: 0; }
@@ -3136,9 +3203,14 @@ body:has(.about-publication) .site-header .nav a {
   .publication-about { align-items: flex-start; }
   .about-monogram { flex-basis: 58px; height: 58px; }
   .home-about { padding: 48px 0 52px; }
-  .home-about-copy h2 { font-size: clamp(2.25rem, 11vw, 3.2rem); }
+  .home-intro-hero { padding: 34px 0 46px; }
+  .home-about-copy h1 { font-size: clamp(2.25rem, 11vw, 3.2rem); }
   .home-about-copy > p:not(.publication-eyebrow) { font-size: 1.04rem; line-height: 1.74; }
   .home-about-video { width: 100%; }
+  .home-intro-video { margin-top: 28px; }
+  .home-intro-cta { margin-top: 20px; }
+  .home-intro-supporting { margin-top: 26px; }
+  .home-primary-cta-placeholder { width: 100%; max-width: 340px; }
   .publication-primary-link { width: 100%; max-width: 310px; }
 
   body:has(.about-publication) .site-shell { width: min(100% - 24px, 620px); }

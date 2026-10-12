@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata({
   title: "Lab",
-  description: "Research and working notes by Brijesh Ramakrishnan.",
+  description: "Exploratory projects and technology investigations by Brijesh Ramakrishnan.",
   path: "/lab",
 });
 
@@ -15,7 +15,7 @@ export default function LabIndexPage() {
   return (
     <main className="about-main">
       <h1 className="page-title">Lab</h1>
-      <p className="page-framing">Compact research notes, open questions, and things learned by doing.</p>
+      <p className="page-framing">Exploratory projects, experiments, and technology investigations.</p>
       <EntryList entries={entries} />
     </main>
   );

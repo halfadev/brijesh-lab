@@ -1,0 +1,2 @@
+// Archived from components during the public IA simplification.
+export function VisualPlaceholder({ visual }: { visual: { concept: string; teachingPoint?: string; treatment: string } }) { return <figure className="visual-placeholder"><figcaption><p className="eyebrow">Visual placeholder</p><dl><div><dt>Concept</dt><dd>{visual.concept}</dd></div>{visual.teachingPoint ? <div><dt>Teaching point</dt><dd>{visual.teachingPoint}</dd></div> : null}<div><dt>Preferred treatment</dt><dd>{visual.treatment}</dd></div></dl></figcaption></figure>; }

@@ -5,13 +5,9 @@ import { siteUrl } from "@/lib/site-config";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${siteUrl}/`, changeFrequency: "monthly", priority: 1 },
-    { url: `${siteUrl}/start-here`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${siteUrl}/learn`, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${siteUrl}/explainers`, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${siteUrl}/explainers/one-medicine-five-systems`, changeFrequency: "yearly", priority: 0.8 },
-    { url: `${siteUrl}/research`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${siteUrl}/writing`, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${siteUrl}/videos`, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${siteUrl}/learn/four-wall-vs-network-visibility`, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${siteUrl}/learn/one-medicine-five-systems`, changeFrequency: "yearly", priority: 0.7 },
     { url: `${siteUrl}/lab`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${siteUrl}/contact`, changeFrequency: "yearly", priority: 0.4 },
   ];

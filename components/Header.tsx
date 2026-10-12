@@ -7,10 +7,9 @@ export function Header() {
         Brijesh Ramakrishnan
       </HardLink>
       <nav className="nav site-nav" aria-label="Primary navigation">
-        <HardLink href="/writing">Writing</HardLink>
-        <HardLink href="/videos">Videos</HardLink>
         <HardLink href="/learn">Learn</HardLink>
         <HardLink href="/lab">Lab</HardLink>
+        <HardLink href="/contact">Contact</HardLink>
       </nav>
     </header>
   );

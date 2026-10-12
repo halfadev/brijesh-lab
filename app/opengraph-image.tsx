@@ -9,7 +9,7 @@ export const alt = siteName;
 export default function Image() {
   return new ImageResponse(
     (
-      <OgCard title={"Part professional archive.\nPart thinking lab."} />
+      <OgCard title={"Making sense of\ncomplex systems."} />
     ),
     size,
   );

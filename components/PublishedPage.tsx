@@ -3,7 +3,7 @@ import { PageContainer } from "@/components/ui/LayoutPrimitives";
 import { ContentRenderer } from "@/components/ContentRenderer";
 import { formatDate, type Entry } from "@/lib/content";
 
-const labels = { article: "Writing", video: "Video essay", lesson: "Course lesson", lab: "Lab note", course: "Course" } as const;
+const labels = { lesson: "Course lesson", lab: "Lab project", course: "Course" } as const;
 
 export async function PublishedPage({ entry, previous, next }: { entry: Entry; previous?: { href: string; title: string }; next?: { href: string; title: string } }) {
   const eyebrow = entry.type === "lesson" ? `${entry.course?.replaceAll("-", " ")} · Module ${entry.module}` : entry.category ?? labels[entry.type];

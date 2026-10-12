@@ -5,12 +5,12 @@ type PageMetadataInput = {
   title: string;
   description: string;
   path: string;
-  /** Pass for article-type routes (writing/lab entries). */
+  /** Pass for dated content-detail routes. */
   article?: { publishedTime: string };
   /**
    * Root-relative path to this route's OG image. Defaults to the site-wide
    * image at "/opengraph-image". Pages that generate their own image
-   * (writing/lab entries) should pass their own path explicitly: routes that
+   * with route-specific images should pass their own path explicitly: routes that
    * define an `openGraph` object of their own don't inherit the file-based
    * image convention from an ancestor segment, so it has to be spelled out.
    */

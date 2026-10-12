@@ -23,7 +23,7 @@ export function EntryList({ entries, showTrack = false }: EntryListProps) {
           <p className="entry-meta">
             {showTrack && (
               <span className="entry-track">
-                {entry.type === "article" ? "Writing" : entry.type === "video" ? "Video" : entry.type === "lesson" ? "Lesson" : "Lab"}
+                {entry.section === "learn" ? "Learn" : "Lab"}
               </span>
             )}
             {entry.status === "draft" ? <span className="entry-track">Draft preview</span> : null}

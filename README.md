@@ -1,6 +1,6 @@
 # Brijesh Ramakrishnan
 
-A lean editorial site for making sense of complex systems. It uses Next.js, local Markdown/MDX, Git, and Vercel. There is no database or CMS.
+A lean site for structured pharmaceutical learning and selected Lab projects. It uses Next.js, local Markdown/MDX, Git, and Vercel. There is no database or CMS.
 
 ## Local preview
 
@@ -22,22 +22,19 @@ npm run build
 
 ## Publishing
 
-1. Copy the appropriate file from `content/templates/` into its destination folder.
-2. Rename it to the final slug, add the copy and media, and keep `status: draft`.
-3. Preview locally with `npm run dev`.
-4. Change the frontmatter to `status: published`.
-5. Run `npm run typecheck` and `npm run build`.
-6. Commit and push. Vercel deploys the connected GitHub branch.
+1. Add the new Markdown or MDX file beneath `content/learn/` or `content/lab/` and keep `status: draft` while working.
+2. Preview locally with `npm run dev`.
+3. Change the frontmatter to `status: published`.
+4. Run `npm run typecheck` and `npm run build`.
+5. Commit and push. Vercel deploys the connected GitHub branch.
 
-Published entries automatically appear in their section, the sitemap, and RSS. Entries with `featured: true` can appear on the homepage. A new entry should not require a React route or CSS change.
+Published entries automatically appear in their section, the sitemap, and RSS. Entries with `featured: true` can appear on the homepage.
 
 ## Content locations
 
-- Essays: `content/writing/`
-- Video essays: `content/videos/`
 - Course lessons: `content/learn/<course-slug>/`
-- Lab notes: `content/lab/`
-- Reusable authoring templates: `content/templates/`
+- Lab projects: `content/lab/`
+- Retired content and templates: `archive/content/`
 
 The private `Knowledge Base` folder is a separate source corpus. Nothing in it is imported or exposed by this website.
 
@@ -48,7 +45,7 @@ Required fields:
 ```yaml
 title: "Readable title"
 slug: readable-slug
-type: article # article | video | course | lesson | lab
+type: lesson # course | lesson | lab
 dek: "A concise description."
 date: 2026-10-04
 status: draft # draft | published
@@ -58,11 +55,9 @@ featured: false
 
 Optional fields: `category`, `course`, `module`, `youtubeId`, `duration`, `previous`, `next`, and `objective`.
 
-MDX entries can use these shared components directly: `KeyConcept`, `Callout`, `ImageBlock`, `InfographicBlock`, `VideoEmbed`, and `Sources`.
+MDX entries can use the supported embedded components documented in the existing Learn content.
 
-## Internal visual reference
-
-The component catalog is at `/design-system`. It is excluded from the sitemap, public navigation, and search indexing.
+The human-readable public route reference is maintained in `SITE_MAP.md`. Retired routes and source material are preserved under `archive/`.
 
 ## Deployment
 

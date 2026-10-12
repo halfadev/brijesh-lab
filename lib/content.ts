@@ -2,8 +2,8 @@ import { marked } from "marked";
 import { parse as parseYaml } from "yaml";
 import generatedContent from "./generated-content.json";
 
-export type ContentSection = "writing" | "videos" | "learn" | "lab";
-export type ContentType = "article" | "video" | "course" | "lesson" | "lab";
+export type ContentSection = "learn" | "lab";
+export type ContentType = "course" | "lesson" | "lab";
 export type ContentStatus = "draft" | "published";
 
 export type EntryFrontmatter = {
@@ -88,7 +88,7 @@ function readFile(section: ContentSection, filePath: string, raw: string): Entry
   const courseFromPath = section === "learn"
     ? pathParts[1]
     : undefined;
-  const type = (data.type ?? (section === "videos" ? "video" : section === "lab" ? "lab" : section === "learn" ? "lesson" : "article")) as ContentType;
+  const type = (data.type ?? (section === "lab" ? "lab" : "lesson")) as ContentType;
   const slug = normalizeString(data.slug) ?? (type === "course" ? courseFromPath : fallbackSlug) ?? fallbackSlug;
   const status: ContentStatus = data.status === "draft" || data.draft === true ? "draft" : "published";
   const course = normalizeString(data.course) ?? courseFromPath;
@@ -106,7 +106,7 @@ function readFile(section: ContentSection, filePath: string, raw: string): Entry
   };
 }
 export function getAllContent(): Entry[] {
-  const sections: ContentSection[] = ["writing", "videos", "learn", "lab"];
+  const sections: ContentSection[] = ["learn", "lab"];
   return sections.flatMap((section) =>
     contentFiles
       .filter((file) => file.path.startsWith(`${section}/`))
@@ -154,9 +154,4 @@ export function formatMonthYear(isoDate: string): string {
   const [year, month] = isoDate.split("-").map(Number);
   if (!year || !month) return isoDate;
   return new Date(Date.UTC(year, month - 1, 1)).toLocaleDateString("en-US", { year: "numeric", month: "long", timeZone: "UTC" });
-}
-export function getNow() {
-  const raw = contentFiles.find((file) => file.path === "now.md")?.raw ?? "";
-  const { data, content } = parseFrontmatter(raw);
-  return { updated: normalizeDate(data.updated), html: marked.parse(content, { async: false }) as string };
 }

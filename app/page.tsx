@@ -1,18 +1,60 @@
 import Image from "next/image";
 import { LessonVideo } from "@/components/LessonVideo";
-import { Eyebrow, HeroLayout, PrimaryButton, TwoColumn } from "@/components/ui/LayoutPrimitives";
+import { Eyebrow, HeroLayout, PrimaryButton } from "@/components/ui/LayoutPrimitives";
 import { EntryList } from "@/components/EntryList";
 import { getFeaturedEntries } from "@/lib/content";
+
+const welcomeVideo = {
+  youtubeId: "AlZYViIUws0",
+  title: "Welcome to Brijesh Ramakrishnan's website",
+};
 
 export default function Home() {
   const featured = getFeaturedEntries();
   return (
     <main className="publication-home">
-      <HeroLayout className="publication-hero" labelledBy="home-title">
+      <HeroLayout className="home-about home-intro-hero" labelledBy="about">
+        <div className="home-about-copy home-intro-copy">
+          <Eyebrow className="publication-eyebrow">About this project</Eyebrow>
+          <h1 id="about">Curious about how complicated things actually work.</h1>
+          <p>
+            I explore the systems behind life sciences, technology, AI, business
+            and the products we interact with.
+          </p>
+        </div>
+
+        <div className="home-about-video home-intro-video">
+          <LessonVideo
+            className="about-welcome-video"
+            youtubeId={welcomeVideo.youtubeId}
+            title={welcomeVideo.title}
+          />
+          <p>A short introduction to what I am building and why.</p>
+        </div>
+
+        <div className="home-intro-cta">
+          <span className="home-primary-cta-placeholder">
+            [PRIMARY CTA — COPY/DESTINATION TBD]
+          </span>
+        </div>
+
+        <div className="home-intro-supporting">
+          <p>
+            I map the actors, flows, constraints and decisions underneath them,
+            then turn what I learn into essays, research and visual explanations.
+          </p>
+          <p>
+            Life sciences is where I&apos;m starting. Over time, this site will expand
+            into broader technology and product systems.
+          </p>
+        </div>
+      </HeroLayout>
+
+      <HeroLayout className="publication-hero" labelledBy="home-offer-title">
         <div className="publication-hero-copy">
-          <h1 id="home-title">
+          <h2 id="home-offer-title">
             Making sense of <span>complex systems.</span>
-          </h1>
+          </h2>
           <p>
             I break down complex systems across life sciences, technology and AI
             through essays, diagrams and visual learning.
@@ -43,37 +85,9 @@ export default function Home() {
             alt="The pharmaceutical lifecycle from discovery through real-world learning"
             width={1200}
             height={330}
-            priority
           />
         </figure>
       </HeroLayout>
-
-      <TwoColumn className="home-about" labelledBy="home-about-title">
-        <div className="home-about-copy">
-          <Eyebrow className="publication-eyebrow">About this project</Eyebrow>
-          <h2 id="home-about-title">Curious about how complicated things actually work.</h2>
-          <p>
-            I explore the systems behind life sciences, technology, AI, business
-            and the products we interact with.
-          </p>
-          <p>
-            I map the actors, flows, constraints and decisions underneath them,
-            then turn what I learn into essays, research and visual explanations.
-          </p>
-          <p>
-            Life sciences is where I&apos;m starting. Over time, this site will expand
-            into broader technology and product systems.
-          </p>
-        </div>
-        <div className="home-about-video">
-          <LessonVideo
-            className="about-welcome-video"
-            youtubeId="AlZYViIUws0"
-            title="Welcome to Brijesh Ramakrishnan's website"
-          />
-          <p>A short introduction to what I am building and why.</p>
-        </div>
-      </TwoColumn>
       <section className="home-featured" aria-labelledby="featured-title">
         <Eyebrow>Featured and latest</Eyebrow>
         <h2 id="featured-title">Start exploring</h2>

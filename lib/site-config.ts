@@ -15,7 +15,7 @@ export const author = "Brijesh Ramakrishnan";
 export const siteName = "Brijesh Ramakrishnan";
 
 export const siteDescription =
-  "Enterprise software for life sciences supply chains. Essays and lab notes on serialization, compliance, and the systems behind them.";
+  "Structured pharmaceutical learning and selected technology experiments by Brijesh Ramakrishnan.";
 
 export const linkedinUrl = "https://www.linkedin.com/in/brijesh-ramakrishnan-36756564/";
 
