@@ -21,8 +21,9 @@ export const linkedinUrl = "https://www.linkedin.com/in/brijesh-ramakrishnan-367
 
 export const emailAddress = "brijesh.ramakrishnan@gmail.com";
 
-// Add these in the deployment environment when the destination URLs are ready.
-export const calendlyUrl = (process.env.NEXT_PUBLIC_CALENDLY_URL ?? "").trim();
+export const calendlyUrl = (
+  process.env.NEXT_PUBLIC_CALENDLY_URL ?? "https://calendly.com/brijesh-ramakrishnan/30min"
+).trim();
 
 export const youtubeUrl = (
   process.env.NEXT_PUBLIC_YOUTUBE_URL ?? "https://www.youtube.com/watch?v=AlZYViIUws0"

@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { LessonVideo } from "@/components/LessonVideo";
+import { HardLink } from "@/components/HardLink";
 import { Eyebrow, HeroLayout, PrimaryButton } from "@/components/ui/LayoutPrimitives";
 import { EntryList } from "@/components/EntryList";
 import { getFeaturedEntries } from "@/lib/content";
+import { calendlyUrl } from "@/lib/site-config";
 
 const welcomeVideo = {
   youtubeId: "AlZYViIUws0",
@@ -13,14 +15,37 @@ export default function Home() {
   const featured = getFeaturedEntries();
   return (
     <main className="publication-home">
-      <HeroLayout className="home-about home-intro-hero" labelledBy="about">
+      <HeroLayout className="home-about home-intro-hero" labelledBy="home-intro-title">
         <div className="home-about-copy home-intro-copy">
-          <Eyebrow className="publication-eyebrow">About this project</Eyebrow>
-          <h1 id="about">Curious about how complicated things actually work.</h1>
-          <p>
-            I explore the systems behind life sciences, technology, AI, business
-            and the products we interact with.
-          </p>
+          <h1 id="home-intro-title">Curiosity first.</h1>
+          <h2>I try to figure out how complicated things work.</h2>
+
+          <div className="home-intro-body">
+            <p>
+              Life sciences. AI. Technology. Business. Everyday products. Science.
+              History.
+            </p>
+            <p>
+              If something makes me wonder “how does that actually work?”, there’s
+              a good chance I’ll pull it apart.
+            </p>
+            <p>
+              This is my design space and learning lab, where I explore
+              interesting questions and share what I find.
+            </p>
+            <p className="home-intro-welcome">
+              I hope you learn something new today!
+            </p>
+          </div>
+
+          <div className="home-intro-cta">
+            <PrimaryButton
+              className="publication-primary-link"
+              href="/learn/global-life-sciences"
+            >
+              Start with Life Sciences →
+            </PrimaryButton>
+          </div>
         </div>
 
         <div className="home-about-video home-intro-video">
@@ -29,67 +54,52 @@ export default function Home() {
             youtubeId={welcomeVideo.youtubeId}
             title={welcomeVideo.title}
           />
-          <p>A short introduction to what I am building and why.</p>
-        </div>
-
-        <div className="home-intro-cta">
-          <span className="home-primary-cta-placeholder">
-            [PRIMARY CTA — COPY/DESTINATION TBD]
-          </span>
-        </div>
-
-        <div className="home-intro-supporting">
-          <p>
-            I map the actors, flows, constraints and decisions underneath them,
-            then turn what I learn into essays, research and visual explanations.
-          </p>
-          <p>
-            Life sciences is where I&apos;m starting. Over time, this site will expand
-            into broader technology and product systems.
-          </p>
         </div>
       </HeroLayout>
 
-      <HeroLayout className="publication-hero" labelledBy="home-offer-title">
-        <div className="publication-hero-copy">
-          <h2 id="home-offer-title">
-            Making sense of <span>complex systems.</span>
-          </h2>
+      <HeroLayout className="home-learning" labelledBy="home-learning-title">
+        <div className="home-learning-copy">
+          <h2 id="home-learning-title">How I learn.</h2>
           <p>
-            I break down complex systems across life sciences, technology and AI
-            through essays, diagrams and visual learning.
+            Curiosity usually starts with a question. I research what already
+            exists, explore how the pieces fit together, build something to make
+            the idea concrete, test what holds up, and carry what I learn into the
+            next question.
           </p>
-          <PrimaryButton className="publication-primary-link" href="/learn/global-life-sciences/01-industry-map">
-            Explore the Pharma Guide →
-          </PrimaryButton>
-
-          <ul className="publication-principles" aria-label="What you will find here">
-            <li>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v16H5.5A2.5 2.5 0 0 0 3 21.5v-16ZM21 5.5A2.5 2.5 0 0 0 18.5 3H13v16h5.5a2.5 2.5 0 0 1 2.5 2.5v-16Z" /></svg>
-              Visual learning
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2.25"/><circle cx="5" cy="18.5" r="2.25"/><circle cx="19" cy="18.5" r="2.25"/><path d="M12 6.25v5.25M5 16.25v-2.5h14v2.5M12 11.5v3"/></svg>
-              System maps
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 16.5h7M9.5 20h5M8.4 14.7A7 7 0 1 1 15.6 14.7c-.8.6-1.1 1.1-1.1 1.8h-5c0-.7-.3-1.2-1.1-1.8Z"/></svg>
-              Clear explanations
-            </li>
-          </ul>
+          <p>
+            The output might be an essay, a diagram, an experiment, a video, or
+            something I build. The goal is the same: understand it well enough to
+            explain it simply.
+          </p>
         </div>
 
-        <figure className="lifecycle-hero-visual">
+        <figure className="design-loop-visual">
           <Image
-            src="/images/library/pharmaceutical-lifecycle.svg"
-            alt="The pharmaceutical lifecycle from discovery through real-world learning"
-            width={1200}
-            height={330}
+            src="/images/design-loop.png"
+            alt="A circular design loop moving from Question to Research, Explore, Build, Test, Learn, and back to Question"
+            width={1536}
+            height={1024}
+            sizes="(max-width: 1120px) 100vw, 52vw"
           />
         </figure>
+
+        <div className="home-learning-cta">
+          <h3 className="home-learning-leadin">
+            Have an interesting problem or idea?
+          </h3>
+          <p className="home-learning-invitation">Let&apos;s talk about it.</p>
+          <HardLink
+            className="ui-button ui-button-primary publication-primary-link"
+            href={calendlyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get in touch →
+          </HardLink>
+        </div>
       </HeroLayout>
       <section className="home-featured" aria-labelledby="featured-title">
-        <Eyebrow>Featured and latest</Eyebrow>
+        <Eyebrow>Featured</Eyebrow>
         <h2 id="featured-title">Start exploring</h2>
         <EntryList entries={featured} showTrack />
       </section>
